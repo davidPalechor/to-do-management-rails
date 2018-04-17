@@ -3,7 +3,7 @@
 <ul>
 <% @list.each do |item| %>
   <li>
-    <input id="task_<%= item.id %>" type="checkbox"<% if item.completed? %> checked<% end %> onclick="completeTask(<%= item.id %>)"><%= item.title %></input>
+    <input class="js-check-task" id="task_<%= item.id %>" type="checkbox"<% if item.completed? %> checked<% end %>><%= item.title %></input>
   </li>
 <% end %>
 </ul>
