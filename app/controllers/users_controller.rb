@@ -1,6 +1,9 @@
 class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
+    
+    to_do_list = ToDoList.where(user_id: params[:id])
+    @list = ToDoItem.where(to_do_list_id: to_do_list[0][:id])
   end
   
   def new
@@ -10,7 +13,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      # Handle a successful save.
+      redirect_to @user
     else
       render 'new'
     end
