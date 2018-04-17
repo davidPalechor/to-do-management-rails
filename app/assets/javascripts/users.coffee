@@ -2,15 +2,15 @@ $ ->
   $('form.new_user').validate({
     rules: {
       'user[name]': 'required',
-      'user[email]':{
+      'user[email]': {
         required: true,
         email: true
       },
-      'user[password]':{
+      'user[password]': {
         required: true,
         minlength: 6
       },
-      'user[password_confirmation]':{
+      'user[password_confirmation]': {
         required: true,
         equalTo: '#user_password'
       }

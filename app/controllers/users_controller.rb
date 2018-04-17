@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
+    @list = []
     
     to_do_list = ToDoList.where(user_id: params[:id])
     @list = ToDoItem.where(to_do_list_id: to_do_list[0][:id])
